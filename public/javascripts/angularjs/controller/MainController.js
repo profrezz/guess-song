@@ -77,7 +77,8 @@ app.controller('MainCtrl', function($rootScope, $scope, $interval) {
         //console.log(wordTransform);
     }
     function callMinus(sec) {
-        $rootScope.totalseconds = $rootScope.totalseconds + sec;
+        if( $rootScope.totalseconds > 0)
+            $rootScope.totalseconds = $rootScope.totalseconds + sec;
     }
     function renderAgain() {
         callMinus(-1);

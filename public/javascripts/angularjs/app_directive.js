@@ -1,7 +1,8 @@
 
 //app.directive('charecter', );
 var thaiContent = { 
-    guess: 'สวัสดี', 
+    guess: 'ว่าไงคนแปลกหน้า หลงเข้ามาละสิ ฮ่าๆๆๆ', 
+    intro_main: 'ฟังอย่างตั้งใจแล้วลองเดาดูว่าเพลงที่ได้ยินชื่อเพลอะไร',
     option_1: 'ทายสิ เพลงนี้ชื่อว่าเพลงอะไร ? เดาชื่อเพลงให้ไวที่สุดเท่าที่จะเป็นไปได้', 
     option_desc_1: 'คุณเหลือเวลาอีก 40 วินาที',
     option_2: 'เวลานับถอยหลังแล้ว! เลขเวลาจะลดลงทุกวินาที', 
@@ -14,7 +15,8 @@ var thaiContent = {
     play_btn: 'เล่นเดี่ยวนี้'
 };
 var EnglishContent = { 
-    guess: 'Guess', 
+    guess: 'Hello stranger, wanna have fun here ? yeah right direction', 
+    intro_main: 'Listen the songs carefully, predict the song name from charecter template',
     option_1: "What's this song name ? guess the wording as fast as possible", 
     option_desc_1: 'You have 40 seconds left!',
     option_2: 'Stopwatch is running! timmer will be decreased every seconds', 
@@ -45,7 +47,7 @@ app.directive('lang', ['$location', function(location) {
                 }
                 angular.forEach(translateContent, function(value, key) {
                     if(key == attr.lang){
-                        element.text(value); 
+                        element.html(value); 
                     }
                 });
                 

@@ -234,9 +234,6 @@ ol.round li.two {
 ol.round li.three {
   background: url("../images/orderedListThree.png") no-repeat;
 }
-ol.round li.fours {
-  background: url("../images/orderedListFour.png") no-repeat;
-}
 /* content */
 article {
   float: left;

@@ -41,9 +41,16 @@ html
             ul
             -if(!everyauth.loggedIn)
                 li
-                    select(name="language")
-                      option(value="EN") English
-                      option(value="TH") Thai
+                    select(onchange="goto()")(name="language")(id="mySelect")
+                      -if(language=='en')
+                        option(value="en")(selected) English
+                      -else
+                        option(value="en") English
+
+                      -if(language=='th')
+                        option(value="th")(selected) Thai
+                      -else
+                        option(value="th") Thai
                 li
                     a(href="/register") Register
                 li
@@ -68,7 +75,7 @@ html
                 a(href="/play") Play!!
     #body
         block content
-      
+          
     footer
       div(class="content-wrapper")
         div(class="float-left")
@@ -78,3 +85,8 @@ html
             li
               a(href="https://www.facebook.com/chin.chayut", class="facebook") Facebook
               a(href="http://twitter.com/chhopster", class="twitter") Twitter
+    script(type="text/javascript").
+        function goto(){
+          var language = document.getElementById("mySelect").value;
+          location.href = '/' + language;
+        }

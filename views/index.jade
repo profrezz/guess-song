@@ -5,30 +5,28 @@ block content
       div(class="content-wrapper")
           hgroup(class="title")
               h1=title 
-              h2 Modify this template to jump-start your node.js express application.
+              h2(lang="guess") Guess single name the games!!
           p
-            | To learn more about node.js, visit
+            | Listen the songs carefully, predict the song name from charecter template 
             a(href="http://nodejs.org", title="node.js Website", target="_blank") http://nodejs.org/
-            |. The page features 
-            span(class="highlight") videos, tutorials, and samples
-            | to help you get the most from node.js. If you have any questions about node.js and Windows Azure, visit 
-            a(href="https://www.windowsazure.com/en-us/develop/nodejs/", title="node.js on Windows Azure", target="_blank") our dev center
-            |.
+            |. Various songs came from Youtube Video randomly OR
+            span(class="highlight") you can generate quize yourself and shared to friends
+            | 
 
     section(class="main-content")
-      h3 Raadom Songs from Youtube:
+      h3(lang="random_title") Random Songs from Youtube:
       ol(class="round")
           li(class="one")
-              h5 What's this song name ? guess the wording as fast as possible
-              p 
+              h5(lang="option_1") What's this song name ? guess the wording as fast as possible
+              p(lang="option_desc_1") 
                 | You have 40 seconds left! 
                 include quize.html
           li(class="two")
-              h5 Stopwatch is running! timmer will be decreased every seconds
-              p 
+              h5(lang="option_2") Stopwatch is running! timmer will be decreased every seconds
+              p(compile lang="option_desc_2")
                 | Now you have {{totalseconds}} seconds
           li(class="three")
-              h5 Typing input form to answer the question
+              h5(lang="option_3") Typing input form to answer the question, like this
               p 
                 include typed.html
                 //- div(class="type-wrap frame")
@@ -38,9 +36,10 @@ block content
                 //-         b {{quizeWord}}
                 //-     span(id="typed")
           li(class="four")
-              h5 Get Score
+              h5(lang="option_4") Get Score
+              p(lang="option_desc_4")
                 | Once you answer correct question, you got score +120 peer answer and main stopwatch would be on hold until next question appear<br/><br/>
-              button(class="btn btn-success") Let's Play
+              button(lang="play_btn")(class="btn btn-success") Let's Play
     script(type="text/javascript").
         var t = 10;
         console.log(t);

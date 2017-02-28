@@ -7,11 +7,11 @@ module.exports = function (app) {
 
     // chat area
     app.get('/chat', function (req, res) {
-        res.render('chat', { title: 'Chat with Me!  ' })
+        res.render('chat', { title: 'Shout what you think!  ' })
     });
 
     // about page
     app.get('/play', function (req, res) {
-        res.render('about', { title: 'About Me.  ' })
+        res.render('play', { title: 'Choose your category  ' })
     });
 }

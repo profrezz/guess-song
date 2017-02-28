@@ -1,3 +1,35 @@
-<iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-  frameborder="0"></iframe>
+<!--<iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&origin=http://example.com"
+  frameborder="0"></iframe>-->
+
+  <div ng-controller="MainCtrl">
+    <div class="row"> <!-- start row 1 -->
+    <div class="col">
+            <!--<h4>Hello {{pageTitle}}</h4>-->
+    </div>
+    </div> <!-- end row 1 -->
+    <div class="row"> <!-- start row 2 -->
+    <div class="col frame">
+        <div vowelUpper2>
+            <span ng-class="vup2.class" ng-repeat="vup2 in vowelUpper2">
+                {{vup2.charecter}}
+            </span>
+        </div>
+        <div vowelUpper1>
+            <span ng-class="vup1.class" ng-repeat="vup1 in vowelUpper1" >
+                {{vup1.charecter}}
+            </span>
+        </div>
+        <div charecter>
+            <span ng-class="char.class" ng-repeat="char in charecters">
+                {{char.charecter}}
+            </span>
+        </div>
+        <div vowelLower style="position:relative;top:-20px;">
+            <span ng-class="vul.class" ng-repeat="vul in vowelLower" style="left:-0px;">
+                {{vul.charecter}}
+            </span>
+        </div>
+    </div>
+    </div> <!-- end row 2 -->
+</div> <!-- end MainCtrl -->

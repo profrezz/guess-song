@@ -11,7 +11,7 @@ module.exports = function (app) {
     });
 
     // about page
-    app.get('/about', function (req, res) {
+    app.get('/play', function (req, res) {
         res.render('about', { title: 'About Me.  ' })
     });
 }

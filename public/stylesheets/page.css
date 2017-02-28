@@ -1,8 +1,9 @@
 .hideword 
 {
+    font-size: 20pt;
     width: 16px;
-    height: 20px;
-    border-bottom: 2px solid black; 
+    height: 25px;
+    border-bottom: 2px solid lightgray; 
     position: relative;
     margin: 0 10px;
     line-height: 20px;
@@ -15,7 +16,7 @@
     font-size: 20pt;
     width: 16px;
     height: 20px;
-    border-bottom: 2px solid black; 
+    border-bottom: 2px solid lightgray; 
     position: relative;
     margin: 0 10px;
     line-height: 20px;
@@ -34,8 +35,10 @@
 }
 .frame
 {
+    width: 90%;
+    padding: 20px 0 20px 9%;
     background:white;
-    padding-left: 10%;
+    /*padding-left: 10%;*/
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;

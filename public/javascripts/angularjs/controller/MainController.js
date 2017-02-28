@@ -1,6 +1,8 @@
-app.controller('MainCtrl', function($scope, $interval) {
+app.controller('MainCtrl', function($rootScope, $scope, $interval) {
     $scope.pageTitle= "TEST";
     $scope.lastName= "Chayut";
+    //$scope.totalseconds= 40;
+    $rootScope.totalseconds = 40;
     Clear();
     
     var hidenWord = "_";
@@ -11,6 +13,7 @@ app.controller('MainCtrl', function($scope, $interval) {
     var saraLower= init2.split('อ');
 
     var word = 'ศูนย์ประชุมแห่งชาติศิริกิติ์';
+    $rootScope.quizeWord = word;
     var wordTransform = [];
     var wordCorrect = [];
     var jsonstrExample = { "words" : [{"charecter":"v", "isCorrect":"N"},{"charecter":"x", "isCorrect":"N"}]};
@@ -73,7 +76,11 @@ app.controller('MainCtrl', function($scope, $interval) {
         assignValueToScope(wordTransform);
         //console.log(wordTransform);
     }
+    function callMinus(sec) {
+        $rootScope.totalseconds = $rootScope.totalseconds - sec;
+    }
     function renderAgain() {
+        callMinus(-1);
         var isSuccess = checkSuccess(wordTransform['wholeword']);
         //console.log(isSuccess);
         if(!isSuccess){

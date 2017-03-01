@@ -21,6 +21,10 @@ function createConnection() {
             database : 'guesssong'
         });
 }
+
+ function getYoutubeCode(link) {
+       return link.split("=")[1]; //GYpzzbVRrsk
+}
 module.exports = function (app) {
 
     // home page
@@ -47,10 +51,11 @@ module.exports = function (app) {
 
     app.post('/api/setYoutubeLink', function (req, res) {
         var youtubelink = req.body.youtubelink;
-        var youtubeCode = req.body.youtubecode;
+        var youtubeCode = getYoutubeCode(req.body.youtubelink);
         var title = req.body.title;
         var artist = req.body.artist;
         var language = req.body.language;
+        var time = req.body.time;
         var createby = 'Chin';
 
         var connection = createConnection();

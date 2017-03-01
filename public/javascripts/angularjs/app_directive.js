@@ -48,7 +48,7 @@ app.directive('lang', ['$location', function(location) {
             { 
                 var index = 1
                 if(location.absUrl().search('/en') > -1){
-                console.log(location);
+                //console.log(location);
                     
                     translateContent = EnglishContent;
                 }else if(location.absUrl().search('/th') > -1){

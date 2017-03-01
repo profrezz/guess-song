@@ -5,29 +5,34 @@ block content
       div(class="content-wrapper")
           hgroup(class="title")
             //- h1=title 
-            h2(lang="play_watch") Insert Data
+            h2 Insert Data
 
     section(class="main-content")(ng-controller="SongCtrl")
       h3(lang="play_create_") ใส่เพลงไรก็ใส่มา ขอเป็นเพลงบน Youtube ก็พอ
       p(lang="play_manage_text") จัดการเอาให้มันอยู่มือ
 
+      div(id="player")
+
       form(action="/api/setYoutubeLink")(method="POST")
         div(class="form-group")
           label(for="youtubeInput") Youtube Link
-          input(type="text")(class="form-control")(id="youtubeInput")(aria-describedby="emailHelp")(placeholder="Enter youtube Link")
+          input(ng-change="getYoutubeVideo()")(name="youtubelink")(ng-model="youtube")(type="text")(class="form-control")(id="youtubeInput")(aria-describedby="emailHelp")(placeholder="Enter youtube Link")
         div(class="form-group")
           label(for="songInput") Song Name
-          input(type="text")(class="form-control")(id="songInput")(placeholder="Enter Song Name")
+          input(type="text")(name="title")(class="form-control")(id="songInput")(placeholder="Enter Song Name")
         div(class="form-group")
           label(for="artistInput") Artist Name
-          input(type="text")(class="form-control")(id="artistInput")(placeholder="Enter Artist Name")
+          input(type="text")(name="artist")(class="form-control")(id="artistInput")(placeholder="Enter Artist Name")
         div(class="form-group")
           label(for="timeInput") Start Time
-          input(type="number")(class="form-control")(id="timeInput")(readonly)
+          input(ng-model="startsec")(name="time")(type="number")(class="form-control")(id="timeInput")(readonly)
         div(class="form-group")
           label(for="langSelect") Language
-          select(class="form-control" )(id="langSelect")
+          select(class="form-control" )(name="language")(id="langSelect")
             option EN
             option TH
 
         Button(class="btn btn-success") Create Now
+      
+    script(type="text/javascript").
+      

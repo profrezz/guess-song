@@ -12,7 +12,11 @@ var thaiContent = {
     option_4: 'รับคะแนนไปเลย', 
     option_desc_4: 'เมื่อตอบคำถามถูกต้อง คุณจะได้รับคะแนนข้อละ 120 แต้ม และนาฬิกาจับเวลาจะหยุดชั่วคราวจนกว่าคำถามถัดไปจะแสดงขึ้นมา',
     random_title: 'สุ่มเพลงจากยู Youtube:',
-    play_btn: 'เล่นเดี่ยวนี้'
+    play_btn: 'เล่นเดี่ยวนี้',
+    play_watch: 'นาฬิกาของคุณ',
+    play_time_start: 'เวลาเริ่มเดินเเล้ว',
+    play_manage_text: 'จัดการเอาให้มันอยู่มือ เราเชื่อว่านายทำได้',
+    play_menu: 'เล่นเลย'
 };
 var EnglishContent = { 
     guess: 'Hello stranger, wanna have fun here ? yeah right direction', 
@@ -26,7 +30,12 @@ var EnglishContent = {
     option_4: 'Get Score', 
     option_desc_4: 'Once you answer correct question, you got score +120 peer answer and main stopwatch would be on hold until next question appear',
     random_title: 'Random Songs from Youtube:',
-    play_btn: "Let's Play"
+    play_btn: "Let's Play",
+    play_watch: 'Your StopWatch',
+    play_time_start: 'Time is now start',
+    play_manage_text: 'Manage it, We always trust in you',
+    play_menu: 'Play!!'
+    
 };
 var translateContent;
 

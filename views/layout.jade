@@ -27,6 +27,7 @@ html
     script(src='/javascripts/angularjs/date.format.js')
 
     script(src='/javascripts/angularjs/controller/MainController.js')
+    script(src='/javascripts/angularjs/controller/SongController.js')
     
     block head
     
@@ -35,7 +36,7 @@ html
       div(class='content-wrapper')
         div(class="float-left")
           p(class="site-title")
-            a(href="/")
+            a(href="/" + language)
               img(src="/images/logo_guess_word.png")
         div(class="float-right")
           section#login
@@ -69,11 +70,11 @@ html
           nav
             ul#menu
               li 
-                a(href="/") Intro
+                a(href="/" + language) Intro
               li 
                 a(href="/chat") Chat
               li
-                a(href="/play") Play!!
+                a(href="/" + language + "/play")(lang="play") Play!!
     #body
         block content
           
@@ -89,5 +90,7 @@ html
     script(type="text/javascript").
         function goto(){
           var language = document.getElementById("mySelect").value;
-          location.href = '/' + language;
+
+          location.href = location.href.replace("/en/", "/"+language+"/").replace("/th/", "/"+language+"/"); // '/' + language;
+            //console.log(location.href);
         }

@@ -10,7 +10,8 @@ var express = require('express')
   , nconf = require('nconf')
   , path = require('path')
   , everyauth = require('everyauth')
-  , Recaptcha = require('recaptcha').Recaptcha;
+  , Recaptcha = require('recaptcha').Recaptcha
+//   , bodyParser = require('body-parser');
 
 
 /**
@@ -192,6 +193,8 @@ app.configure(function () {
     app.use(app.router);
     app.use(require('less-middleware')({ src: __dirname + '/public' }));
     app.use(express.static(path.join(__dirname, 'public')));
+    //app.use(bodyParser.json()); // support json encoded bodies  
+    //app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 });
 
 app.configure('development', function () {
@@ -205,6 +208,8 @@ app.configure('development', function () {
 **/
 require('./routes/home')(app);
 require('./routes/account')(app);
+require('./routes/api')(app);
+require('./routes/play')(app);
 
 
 var server = http.createServer(app);
